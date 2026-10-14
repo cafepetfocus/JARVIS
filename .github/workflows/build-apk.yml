@@ -6,7 +6,7 @@ on:
       - 'JARVIS-projet.zip'
       - '.github/workflows/build-apk.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
