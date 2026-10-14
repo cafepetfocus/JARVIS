@@ -5,30 +5,54 @@ on:
     paths:
       - 'JARVIS-projet.zip'
       - '.github/workflows/build-apk.yml'
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
+
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+
       - name: Extract project
         run: |
           unzip -q JARVIS-projet.zip -d extracted
           PROJECT_DIR=$(dirname "$(find extracted -name settings.gradle -print -quit)")
           test -f "$PROJECT_DIR/settings.gradle"
           echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          echo "$PROJECT_DIR" > /tmp/project_dir
+
       - name: Build APK
         run: cd "$PROJECT_DIR" && gradle assembleDebug
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: JARVIS-debug-APK
           path: '**/build/outputs/apk/debug/*.apk'
           if-no-files-found: error
+
+      - name: Publish source to separate branch
+        run: |
+          PROJECT_DIR=$(cat /tmp/project_dir)
+          mkdir -p source
+          cp -R "$PROJECT_DIR"/. source/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan source-visible
+          git rm -rf . >/dev/null 2>&1 || true
+          git add source
+          git commit -m "Expose JARVIS project source"
+          git push origin source-visible --force
