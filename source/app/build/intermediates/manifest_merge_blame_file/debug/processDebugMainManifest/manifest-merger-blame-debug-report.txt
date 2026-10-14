@@ -1,0 +1,61 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.jarvis.assistant"
+4    android:versionCode="4"
+5    android:versionName="0.4.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:2:5-67
+11-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:2:22-64
+12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+12-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:3:5-77
+12-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:3:22-74
+13    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+13-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:4:5-81
+13-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:4:22-78
+14
+15    <application
+15-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:5:5-13:19
+16        android:allowBackup="false"
+16-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:5:18-45
+17        android:debuggable="true"
+18        android:extractNativeLibs="false"
+19        android:label="JARVIS"
+19-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:5:46-68
+20        android:theme="@style/AppTheme"
+20-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:5:69-100
+21        android:usesCleartextTraffic="false" >
+21-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:5:101-137
+22        <activity
+22-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:6:9-11:20
+23            android:name="com.jarvis.assistant.MainActivity"
+23-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:6:19-47
+24            android:exported="true"
+24-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:6:48-71
+25            android:windowSoftInputMode="adjustResize" >
+25-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:6:72-114
+26            <intent-filter>
+26-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:7:13-10:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:8:17-69
+27-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:8:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:9:17-77
+29-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:9:27-74
+30            </intent-filter>
+31        </activity>
+32
+33        <receiver
+33-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:12:9-79
+34            android:name="com.jarvis.assistant.ReminderReceiver"
+34-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:12:19-51
+35            android:exported="false" />
+35-->/home/runner/work/JARVIS/JARVIS/extracted/JARVIS/app/src/main/AndroidManifest.xml:12:52-76
+36    </application>
+37
+38</manifest>
